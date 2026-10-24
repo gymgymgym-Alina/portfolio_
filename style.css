@@ -1,0 +1,214 @@
+:root {
+  color-scheme: light dark;
+
+  --color-accent: oklch(60% 40% 250);
+  --color-border: oklch(50% 10% 200 / 40%);
+  --color-muted: color-mix(in oklch, canvastext 60%, canvas);
+  --color-surface: color-mix(in oklch, canvastext 5%, canvas);
+}
+
+html {
+  accent-color: var(--color-accent);
+}
+
+body {
+  font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: auto;
+  padding: 1em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: 400%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+/* ---------- Color scheme switcher ---------- */
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: inherit;
+  font-size: 80%;
+}
+
+/* ---------- Navigation ---------- */
+nav {
+  --border-color: oklch(50% 10% 200 / 40%);
+
+  display: flex;
+  margin-bottom: 2em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+}
+
+nav a.current {
+  border-bottom: 0.4em solid var(--border-color);
+  padding-bottom: 0.1em;
+}
+
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent);
+  padding-bottom: 0.1em;
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+}
+
+/* ---------- Contact form ---------- */
+input, textarea, button {
+  font: inherit;
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
+
+form label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  align-items: center;
+}
+
+form button {
+  grid-column: 1 / -1;
+}
+
+/* ---------- Projects ---------- */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1.5em;
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 0.5em;
+}
+
+.projects article > :is(h1, h2, h3, h4, h5, h6) {
+  margin: 0;
+  font-size: 110%;
+}
+
+.projects .project-details {
+  margin: 0;
+}
+
+.projects .project-details p {
+  margin-block: 0 0.4em;
+}
+
+.project-year {
+  color: var(--color-muted);
+  font-variant-numeric: oldstyle-nums;
+  font-family: Baskerville, "Times New Roman", serif;
+  font-style: italic;
+}
+
+.placeholder-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: 0.4em;
+}
+
+.placeholder {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.projects img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.4em;
+}
+
+/* ---------- CV ---------- */
+body > section {
+  margin-block: 2.5em;
+}
+
+body > section > h2 {
+  font-size: 110%;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.3em;
+}
+
+section article {
+  margin-block: 1.5em;
+}
+
+section article h3 {
+  margin-block: 0 0.15em;
+  font-size: 105%;
+}
+
+section article header p {
+  margin: 0;
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* Content links (outside the nav) */
+body > p a,
+section a {
+  color: var(--color-accent);
+  text-decoration-color: oklch(from var(--color-accent) l c h / 40%);
+  text-underline-offset: 0.15em;
+}
+
+/* ---------- GitHub profile stats ---------- */
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.25em 1em;
+  margin: 0;
+  padding: 1em;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5em;
+  background-color: var(--color-surface);
+  text-align: center;
+}
+
+#profile-stats dt {
+  grid-row: 1;
+  color: var(--color-muted);
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+#profile-stats dd {
+  grid-row: 2;
+  margin: 0;
+  font-size: 200%;
+  font-weight: 600;
+  line-height: 1;
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "title": "LLM Inference Optimization & Observability Platform",
+    "year": 2026,
+    "image": "images/grass.JPG",
+    "description": "FastAPI inference service for Qwen2.5-1.5B with Prometheus/Grafana observability (P50/P99 latency, queue-wait vs. inference-time breakdown, QPS, GPU utilization) and request-level dynamic batching, benchmarked with a Locust harness sweeping 1-100 concurrent users."
+  },
+  {
+    "title": "Deterministic Manuscript Consistency Checker",
+    "year": 2026,
+    "image": "images/consist.png",
+    "description": "Non-LLM checker that cross-references metric-value pairs across manuscript sections to flag self-contradictions. 22 unit tests, zero false positives on 8 adversarial near-miss cases."
+  },
+  {
+    "title": "Cross-Tenant Analytics Dashboard",
+    "year": 2026,
+    "image": "images/grass.JPG",
+    "description": "Aggregation service, UI, and test suite spanning 25 account databases - the team's first quantitative view of usage, spend, and reliability. Surfaced an undetected production failure on day one."
+  },
+  {
+    "title": "Gemini Productivity Chrome Extension",
+    "year": 2026,
+    "image": "images/grass.JPG",
+    "description": "Manifest V3 Chrome extension integrating Gemini Nano to generate contextual follow-up prompts from selected text, with cross-session state persistence and automated prompt injection via thread-URL tracking."
+  },
+  {
+    "title": "Predictive Modeling for U.S. Power Outages",
+    "year": 2026,
+    "image": "images/grass.JPG",
+    "description": "Random Forest pipeline predicting outage cause category, tuned via GridSearchCV to lift accuracy from 50.7% to 70.4% over the baseline."
+  },
+  {
+    "title": "The Sound of Inequality: Urban Factors & Housing Market Analysis",
+    "year": 2026,
+    "image": "images/grass.JPG",
+    "description": "Integrated 5 spatial datasets (noise, demographics, real estate) via HUD crosswalks and built regression models linking noise exposure to Zillow home values across 154 regional features."
+  },
+  {
+    "title": "MDTP Mathematics Item Bank Figures",
+    "year": 2026,
+    "image": "images/grass.JPG",
+    "description": "LaTeX/TikZ figures for the UCSD MDTP item bank - function transformations, coordinate plots, number lines, geometric solids - assembled into complete exam forms with a final QA pass on compilation and formatting."
+  },
+  {
+    "title": "LaTeX-to-PDF/PNG Conversion Pipeline",
+    "year": 2026,
+    "image": "images/grass.JPG",
+    "description": "Maintained and ported a Windows-based ImageMagick + pdfcrop build workflow to macOS, resolving TeX Live version conflicts and Git staging issues along the way."
+  },
+  {
+    "title": "This Portfolio Site",
+    "year": 2026,
+    "image": "images/cat.jpg",
+    "description": "Hand-built static site for DSC 106: semantic HTML, CSS grid with subgrid, and ES modules that generate the navigation, a persistent theme switcher, and this project list from JSON."
+  },
+  {
+    "title": "Solar Outreach Nonprofit Contact Database",
+    "year": 2025,
+    "image": "images/grass.JPG",
+    "description": "Early-stage planning for a nonprofit solar outreach initiative at the Center for Community Energy; sourced and contributed an external fundraising-platform dataset to the San Diego nonprofit contact database."
+  },
+  {
+    "title": "Algorithms & Data Structures Practice Log",
+    "year": 2025,
+    "image": "images/grass.JPG",
+    "description": "Ongoing NeetCode/LeetCode practice in Python and C++, organized by pattern (two pointers, sliding window, graphs, dynamic programming) with written notes on the invariant behind each solution."
+  },
+  {
+    "title": "Technical Contract & Trend Analysis",
+    "year": 2024,
+    "image": "images/grass.JPG",
+    "description": "Data analysis internship at the Shanghai Development Center of Computer Software: turned complex datasets into business insights and managed registration of three technical contracts, streamlining documentation and project tracking."
+  }
+]

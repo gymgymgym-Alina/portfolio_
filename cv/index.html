@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — Alina Gao</title>
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="../global.js"></script>
+</head>
+<body>
+
+    <h1>Yueming Gao</h1>
+    <p>
+        951-573-0959 |
+        <a href="mailto:yueminggaoalina@gmail.com">yueming.gao.alina@gmail.com</a> |
+        <a href="https://www.linkedin.com/in/yueming-gao-alina" target="_blank">www.linkedin.com/in/yueming-gao-alina</a> |
+        <a href="https://github.com/gymgymgym-Alina" target="_blank">gymgymgym-Alina</a>
+    </p>
+
+    <section>
+        <h2>Education</h2>
+        <article>
+            <header>
+                <h3>University of California, San Diego</h3>
+                <p>La Jolla, CA, USA</p>
+            </header>
+            <p>Bachelor of Science in Data Science, GPA: 3.6/4.0 — Expected <time datetime="2027-06">June 2027</time></p>
+        </article>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <ul>
+            <li>ML & Deep Learning: PyTorch, Hugging Face, XGBoost, LightGBM, Scikit-Learn</li>
+            <li>Programming & Tools: Python, C++, SQL, JavaScript, Bash/Shell, R, NumPy, Pandas</li>
+            <li>Infra & MLOps: Docker, Linux, FastAPI, Flask, RESTful APIs (JSON), AWS (S3/EC2), CI/CD, Git</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Project Experience</h2>
+
+        <article>
+            <header>
+                <h3>LLM Inference Optimization & Observability Platform</h3>
+                <p>PyTorch, FastAPI, Prometheus</p>
+            </header>
+            <p><time datetime="2026-07">July 2026</time> – present</p>
+            <ul>
+                <li>Built a FastAPI inference service for Qwen2.5-1.5B with Prometheus/Grafana observability: P50/P99 latency, queue-wait vs. inference-time breakdown, QPS, GPU utilization.</li>
+                <li>Implemented request-level dynamic batching (asyncio queue + background worker, tunable batch size/timeout, left-padded generation) to replace serialized inference; kept the baseline behind a mode flag for controlled A/B benchmarking.</li>
+                <li>Built a Locust harness sweeping 1–100 concurrent users to locate bottlenecks and map throughput/latency trade-offs.</li>
+            </ul>
+        </article>
+
+        <article>
+            <header>
+                <h3>Gemini Productivity Chrome Extension</h3>
+                <p>JavaScript, Manifest V3, DOM Manipulation</p>
+            </header>
+            <p><time datetime="2026-07">July 2026</time></p>
+            <ul>
+                <li>Built a Chrome Extension (Manifest V3, isolated/main-world architecture) integrating Gemini Nano to generate contextual follow-up prompts from user-selected text.</li>
+                <li>Implemented cross-session state persistence and automated prompt injection via thread-URL tracking and page redirection.</li>
+            </ul>
+        </article>
+
+        <article>
+            <header>
+                <h3>Predictive Modeling for U.S. Power Outages</h3>
+                <p>Python, Scikit-Learn</p>
+            </header>
+            <p><time datetime="2026-05">May 2026</time> – <time datetime="2026-06">June 2026</time></p>
+            <ul>
+                <li>Built a Random Forest pipeline predicting outage cause category; tuned via GridSearchCV, improving accuracy over baseline by ~20 points (50.7% → 70.4%).</li>
+            </ul>
+        </article>
+
+        <article>
+            <header>
+                <h3>The Sound of Inequality: Urban Factors & Housing Market Analysis</h3>
+                <p>Python, R, Regression Analysis</p>
+            </header>
+            <p><time datetime="2026-06">June 2026</time></p>
+            <ul>
+                <li>Integrated 5 spatial datasets (noise, demographics, real estate) via HUD crosswalks; built regression models linking noise exposure to Zillow home values. Handled multicollinearity/missing data across 154 regional features, surfacing non-linear urban-environment-to-economic correlations.</li>
+            </ul>
+        </article>
+    </section>
+
+    <section>
+        <h2>Professional Experience</h2>
+
+        <article>
+            <header>
+                <h3><a href="http://inkmind.ai" target="_blank">InkMind.AI</a> — AI Agent Product Manager (backend & data engineering)</h3>
+                <p>FastAPI, React, Docker — Remote, CA</p>
+            </header>
+            <p><time datetime="2026-07">July 2026</time> – Present</p>
+            <ul>
+                <li>Shipped a deterministic (non-LLM) consistency checker that cross-references metric-value pairs across manuscript sections to flag self-contradictions; 22 unit tests, zero false positives on 8 adversarial near-miss cases.</li>
+                <li>Built a cross-tenant analytics dashboard (aggregation service, UI, tests) over 25 account databases — the team's first quantitative view of usage, spend, and reliability; surfaced an undetected production failure on day one.</li>
+                <li>Fixed a deadlock where a crashed worker left the scan lock permanently held, blocking all future scans; added regression coverage.</li>
+            </ul>
+        </article>
+
+        <article>
+            <header>
+                <h3>Department of Mathematics, University of California, San Diego — Student Assistant</h3>
+                <p>La Jolla, CA</p>
+            </header>
+            <p><time datetime="2026-02">February 2026</time> – Present</p>
+            <ul>
+                <li>Build and debug mathematical figures in LaTeX/TikZ (function transformation graphs, coordinate plots, number lines, geometric solids) for the MDTP mathematics item bank; assemble individual items into complete exam forms and serve as the final QA pass on compilation and formatting errors.</li>
+                <li>Maintained the LaTeX-to-PDF/PNG conversion pipeline (ImageMagick, pdfcrop) and ported the team's Windows-based build workflow to macOS, resolving TeX Live version conflicts and Git staging issues in the process.</li>
+            </ul>
+        </article>
+
+        <article>
+            <header>
+                <h3>Center for Community Energy (CCE) — Data Science Intern</h3>
+                <p>Remote/Hybrid, San Diego, CA</p>
+            </header>
+            <p><time datetime="2026-02">February 2026</time> – <time datetime="2026-06">June 2026</time></p>
+            <ul>
+                <li>Participated in early-stage planning for a nonprofit solar outreach initiative; sourced and contributed an external fundraising-platform dataset to the team's San Diego nonprofit contact database.</li>
+            </ul>
+        </article>
+
+        <article>
+            <header>
+                <h3>Shanghai Development Center of Computer Software — Data Analysis Assistant</h3>
+                <p>Shanghai, China</p>
+            </header>
+            <p><time datetime="2024-07">July 2024</time> – <time datetime="2024-08">August 2024</time></p>
+            <ul>
+                <li>Analyzed data to identify key trends, converting complex datasets into actionable business insights. Managed the registration of three technical contracts, optimizing documentation workflows and project tracking efficiency.</li>
+            </ul>
+        </article>
+    </section>
+
+    <section>
+        <h2>Leadership and Extracurricular Activities</h2>
+        <article>
+            <header>
+                <h3>Drama Club — Active Member / Backstage Coordinator</h3>
+            </header>
+            <p><time datetime="2023-09">September 2023</time> – <time datetime="2025-06">June 2025</time></p>
+            <ul>
+                <li>Coordinated backstage operations and prop design for 2 productions, enhancing workflow and project delivery.</li>
+            </ul>
+        </article>
+    </section>
+
+</body>
+</html>
