@@ -18,7 +18,7 @@ currentLink?.classList.add("current");
 export const BASE_PATH =
   location.hostname === "localhost" || location.hostname === "127.0.0.1"
     ? "/"
-    : "/portfolio/";
+    : "/portfolio_/";
 
 const pages = [
   { url: "", title: "Home" },
