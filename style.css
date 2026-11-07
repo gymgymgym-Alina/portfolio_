@@ -294,3 +294,136 @@ section a {
   background-color: var(--color-surface);
   color: inherit;
 }
+
+/* ---------- Lab 6: summary stats ---------- */
+.hint {
+  color: var(--color-muted);
+  font-size: 90%;
+}
+
+dl.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7em, 1fr));
+  gap: 0.25em 1em;
+  margin-block: 1em 2em;
+  padding: 1em;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5em;
+  background-color: var(--color-surface);
+  text-align: center;
+}
+
+dl.stats dt {
+  grid-row: 1;
+  color: var(--color-muted);
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+dl.stats dd {
+  grid-row: 2;
+  margin: 0;
+  font-size: 170%;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+dl.stats dd small {
+  display: block;
+  font-size: 50%;
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+/* ---------- Lab 6: scatterplot ---------- */
+#chart svg {
+  margin-block: 1em;
+}
+
+.gridlines line {
+  stroke: var(--color-border);
+  stroke-opacity: 0.6;
+}
+
+.gridlines path {
+  display: none;
+}
+
+#chart circle {
+  cursor: pointer;
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#chart circle:hover {
+  transform: scale(1.4);
+}
+
+#chart circle.selected {
+  stroke: canvastext;
+  stroke-width: 1.5;
+  fill: var(--color-selected);
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: canvastext;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+#selection-count {
+  font-weight: 600;
+}
+
+/* ---------- Lab 6: tooltip ---------- */
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2em 0.8em;
+  margin: 0;
+  transition-duration: 300ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info dt {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+dl.info dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  z-index: 10;
+  max-width: 22em;
+  padding: 0.8em 1em;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5em;
+  background-color: color-mix(in oklch, canvas 80%, transparent);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px oklch(0% 0 0 / 20%);
+  pointer-events: none;
+}
