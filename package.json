@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "elocuent": "^0.0.4"
+  },
+  "scripts": {
+    "loc": "elocuent -d . -o meta/loc.csv"
+  }
+}
