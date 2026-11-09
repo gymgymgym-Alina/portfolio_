@@ -1,5 +1,12 @@
 [
   {
+    "title": "Bikewatching: Boston Bluebikes Traffic Map",
+    "year": 2026,
+    "image": "images/bikewatching.jpg",
+    "description": "Interactive Mapbox map of 453 Bluebikes stations over 260,000 March 2024 trips. An SVG overlay tracks pan and zoom, circle area encodes station traffic, and a time slider filters trips to a one-hour window, revealing the morning commute as departures from residential areas and arrivals downtown. Pre-bucketing trips by minute keeps slider updates at about 7 ms.",
+    "url": "https://gymgymgym-alina.github.io/bikewatching/"
+  },
+  {
     "title": "LLM Inference Optimization & Observability Platform",
     "year": 2026,
     "image": "images/grass.JPG",

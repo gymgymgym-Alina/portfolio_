@@ -427,3 +427,15 @@ dl.info[hidden]:not(:hover, :focus-within) {
   box-shadow: 0 4px 16px oklch(0% 0 0 / 20%);
   pointer-events: none;
 }
+
+/* ---------- Lab 7: project links ---------- */
+.projects article a {
+  color: inherit;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.15em;
+}
+
+.projects article a:hover {
+  color: var(--color-accent);
+}
