@@ -355,6 +355,10 @@ dl.stats dd small {
   transition: 200ms;
   transform-origin: center;
   transform-box: fill-box;
+
+  @starting-style {
+    r: 0;
+  }
 }
 
 #chart circle:hover {
@@ -438,4 +442,24 @@ dl.info[hidden]:not(:hover, :focus-within) {
 
 .projects article a:hover {
   color: var(--color-accent);
+}
+
+/* ---------- Lab 8: time filter ---------- */
+.time-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5em 1em;
+  margin-block: 1em;
+}
+
+.time-filter input {
+  flex: 1;
+  min-width: 12em;
+}
+
+.time-filter time {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-muted);
 }

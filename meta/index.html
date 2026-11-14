@@ -17,6 +17,12 @@
 
     <h2>Commits by time of day</h2>
     <p class="hint">Each dot is one commit. Bigger dots changed more lines. Hover a dot for details, or drag a box to select a group of commits.</p>
+    <label class="time-filter" for="commit-progress">
+        Show commits until:
+        <input type="range" id="commit-progress" min="0" max="100" step="any" value="100">
+        <time id="commit-time"></time>
+    </label>
+
     <div id="chart"></div>
 
     <p id="selection-count">No commits selected</p>
