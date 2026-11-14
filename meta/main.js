@@ -276,6 +276,46 @@ function brushed(event) {
   renderLanguageBreakdown(renderSelectionCount());
 }
 
+/* ---------- Lab 8, Step 2: file unit visualization ---------- */
+const typeColors = d3.scaleOrdinal(d3.schemeTableau10);
+
+function updateFileDisplay(commitList) {
+  const lines = commitList.flatMap((d) => d.lines);
+
+  const files = d3
+    .groups(lines, (d) => d.file)
+    .map(([name, lines]) => ({ name, lines }))
+    .sort((a, b) => b.lines.length - a.lines.length);
+
+  const rows = d3
+    .select("#files")
+    .selectAll("div.file")
+    .data(files, (d) => d.name)
+    .join((enter) =>
+      enter
+        .append("div")
+        .attr("class", "file")
+        .call((div) => {
+          const dt = div.append("dt");
+          dt.append("code");
+          dt.append("small");
+          div.append("dd");
+        })
+    )
+    .order();
+
+  rows.select("dt > code").text((d) => d.name);
+  rows.select("dt > small").text((d) => `${d.lines.length} lines`);
+
+  rows
+    .select("dd")
+    .selectAll("div")
+    .data((d) => d.lines)
+    .join("div")
+    .attr("class", "loc")
+    .style("--color", (d) => typeColors(d.type));
+}
+
 /* ---------- Lab 8, Step 1: filtering by time ---------- */
 const timeScale = d3
   .scaleTime()
@@ -302,6 +342,7 @@ function showCommitsUntil(maxTime) {
 
   renderStats(filteredCommits);
   updateScatterPlot(filteredCommits);
+  updateFileDisplay(filteredCommits);
   renderLanguageBreakdown(renderSelectionCount());
 }
 
