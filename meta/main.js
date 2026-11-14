@@ -1,4 +1,5 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+import scrollama from "https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm";
 
 const REPO_URL = "https://github.com/gymgymgym-Alina/portfolio_";
 
@@ -353,3 +354,40 @@ function onTimeSliderChange() {
 renderScatterPlot();
 progressSlider.addEventListener("input", onTimeSliderChange);
 onTimeSliderChange();
+
+/* ---------- Lab 8, Step 3: scrollytelling ---------- */
+const formatLines = d3.format(",");
+
+d3.select("#scatter-story")
+  .selectAll(".step")
+  .data(commits)
+  .join("div")
+  .attr("class", "step")
+  .html((d, i) => {
+    const date = d.datetime.toLocaleString("en", { dateStyle: "full" });
+    const time = d.datetime.toLocaleString("en", { timeStyle: "short" });
+    const files = d3.rollups(d.lines, (v) => v.length, (line) => line.file).length;
+    const label = i === 0 ? "my first commit" : "another commit";
+
+    return `
+      <p class="step-date">${date}, ${time}</p>
+      <p>
+        I made <a href="${d.url}" target="_blank" rel="noopener">${label}</a>.
+        It edited ${formatLines(d.totalLines)} line${d.totalLines === 1 ? "" : "s"}
+        across ${files} file${files === 1 ? "" : "s"}.
+      </p>
+    `;
+  });
+
+function onStepEnter(response) {
+  d3.selectAll("#scatter-story .step").classed("is-active", false);
+  response.element.classList.add("is-active");
+  showCommitsUntil(response.element.__data__.datetime);
+}
+
+scrollama()
+  .setup({
+    container: "#scrolly-1",
+    step: "#scrolly-1 .step",
+  })
+  .onStepEnter(onStepEnter);
